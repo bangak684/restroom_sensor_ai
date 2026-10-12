@@ -1,0 +1,1196 @@
+{
+ "created": "2026-10-12T02:12:55+00:00",
+ "world": "unified_restroom_v1",
+ "note": "All numbers come from the synthetic unified world. Real sensor rows: 0.",
+ "data": {
+  "train_devices": 120,
+  "eval_devices": 40,
+  "days": 14,
+  "stride": 8,
+  "features": 56
+ },
+ "hyper_parameters": {
+  "learning_rate": 0.08,
+  "min_samples_leaf": 100,
+  "l2_regularization": 1.0,
+  "class_weight": "balanced",
+  "random_state": 0,
+  "max_leaf_nodes": 63,
+  "max_rounds": 400,
+  "rounds_used": {
+   "smoking": 180,
+   "smoke_residual": 140,
+   "occupancy_odor": 400,
+   "handwashing_humidity": 400,
+   "wet_floor": 340,
+   "cleaning_products": 280,
+   "cleaning_wet_floor": 160,
+   "sanitizer": 400,
+   "fragrance": 320,
+   "door_open": 400,
+   "window_open": 140,
+   "ventilation_change": 100,
+   "faucet_on": 340,
+   "leak_active": 240,
+   "freeze_risk_1h": 400,
+   "freeze_risk_3h": 80
+  },
+  "leaf_grid_mean_AP": {
+   "15": 0.6133,
+   "31": 0.6195,
+   "63": 0.6238
+  }
+ },
+ "thresholds": {
+  "smoking": {
+   "alarm": 0.9628636837005615,
+   "watch": 0.8779310584068298
+  },
+  "smoke_residual": {
+   "alarm": 0.9353412985801697,
+   "watch": 0.563095211982727
+  },
+  "occupancy_odor": {
+   "alarm": 0.8720419406890869,
+   "watch": 0.294248104095459
+  },
+  "handwashing_humidity": {
+   "alarm": 0.8858464956283569,
+   "watch": 0.592514157295227
+  },
+  "wet_floor": {
+   "alarm": 0.8001984357833862,
+   "watch": 0.7705523371696472
+  },
+  "cleaning_products": {
+   "alarm": 0.9355165958404541,
+   "watch": 0.7710356712341309
+  },
+  "cleaning_wet_floor": {
+   "alarm": 0.907099187374115,
+   "watch": 0.8691999316215515
+  },
+  "sanitizer": {
+   "alarm": 0.928378701210022,
+   "watch": 0.9075831174850464
+  },
+  "fragrance": {
+   "alarm": 0.821336567401886,
+   "watch": 0.821336567401886
+  },
+  "door_open": {
+   "alarm": 0.8229919672012329,
+   "watch": 0.8229919672012329
+  },
+  "window_open": {
+   "alarm": 0.8457688689231873,
+   "watch": 0.7478978037834167
+  },
+  "ventilation_change": {
+   "alarm": 0.8575803637504578,
+   "watch": 0.8575803637504578
+  },
+  "faucet_on": {
+   "alarm": 0.9236494302749634,
+   "watch": 0.8962198495864868
+  },
+  "leak_active": {
+   "alarm": 0.35240593552589417,
+   "watch": 0.012507135979831219
+  },
+  "freeze_risk_1h": {
+   "alarm": 0.9893894195556641,
+   "watch": 0.006706966552883387
+  },
+  "freeze_risk_3h": {
+   "alarm": 0.9938450455665588,
+   "watch": 0.5858970880508423
+  }
+ },
+ "smoking_rules": {
+  "alarm": {
+   "threshold": 0.98,
+   "m": 10,
+   "window": 12,
+   "clear": 8,
+   "events": 497,
+   "caught": 0.6177,
+   "false_alarms": 27,
+   "false_per_device_day": 0.0489,
+   "delay_min_median": 4.0,
+   "delay_min_p90": 6.35
+  },
+  "suspect": {
+   "threshold": 0.97,
+   "m": 6,
+   "window": 8,
+   "clear": 8,
+   "events": 497,
+   "caught": 0.7948,
+   "false_alarms": 129,
+   "false_per_device_day": 0.2338,
+   "delay_min_median": 3.0,
+   "delay_min_p90": 5.5
+  }
+ },
+ "splits": {
+  "test": {
+   "devices": 40,
+   "rows": 3177600,
+   "labels": {
+    "smoking": {
+     "alarm": {
+      "prevalence": 0.00451,
+      "threshold": 0.9629,
+      "precision": 0.7388,
+      "recall": 0.5078,
+      "f1": 0.6019,
+      "auc": 0.9697,
+      "average_precision": 0.587
+     },
+     "watch": {
+      "prevalence": 0.00451,
+      "threshold": 0.8779,
+      "precision": 0.5941,
+      "recall": 0.598,
+      "f1": 0.596,
+      "auc": 0.9697,
+      "average_precision": 0.587
+     }
+    },
+    "smoke_residual": {
+     "alarm": {
+      "prevalence": 0.01175,
+      "threshold": 0.9353,
+      "precision": 0.7869,
+      "recall": 0.6902,
+      "f1": 0.7354,
+      "auc": 0.9944,
+      "average_precision": 0.8002
+     },
+     "watch": {
+      "prevalence": 0.01175,
+      "threshold": 0.5631,
+      "precision": 0.5934,
+      "recall": 0.8429,
+      "f1": 0.6965,
+      "auc": 0.9944,
+      "average_precision": 0.8002
+     }
+    },
+    "occupancy_odor": {
+     "alarm": {
+      "prevalence": 0.07437,
+      "threshold": 0.872,
+      "precision": 0.8201,
+      "recall": 0.8098,
+      "f1": 0.8149,
+      "auc": 0.9738,
+      "average_precision": 0.8605
+     },
+     "watch": {
+      "prevalence": 0.07437,
+      "threshold": 0.2942,
+      "precision": 0.478,
+      "recall": 0.926,
+      "f1": 0.6305,
+      "auc": 0.9738,
+      "average_precision": 0.8605
+     }
+    },
+    "handwashing_humidity": {
+     "alarm": {
+      "prevalence": 0.04867,
+      "threshold": 0.8858,
+      "precision": 0.7531,
+      "recall": 0.729,
+      "f1": 0.7409,
+      "auc": 0.9787,
+      "average_precision": 0.8272
+     },
+     "watch": {
+      "prevalence": 0.04867,
+      "threshold": 0.5925,
+      "precision": 0.5011,
+      "recall": 0.8838,
+      "f1": 0.6395,
+      "auc": 0.9787,
+      "average_precision": 0.8272
+     }
+    },
+    "wet_floor": {
+     "alarm": {
+      "prevalence": 0.04725,
+      "threshold": 0.8002,
+      "precision": 0.5259,
+      "recall": 0.5576,
+      "f1": 0.5413,
+      "auc": 0.9269,
+      "average_precision": 0.5409
+     },
+     "watch": {
+      "prevalence": 0.04725,
+      "threshold": 0.7706,
+      "precision": 0.4957,
+      "recall": 0.5892,
+      "f1": 0.5384,
+      "auc": 0.9269,
+      "average_precision": 0.5409
+     }
+    },
+    "cleaning_products": {
+     "alarm": {
+      "prevalence": 0.01746,
+      "threshold": 0.9355,
+      "precision": 0.736,
+      "recall": 0.6545,
+      "f1": 0.6928,
+      "auc": 0.9868,
+      "average_precision": 0.7679
+     },
+     "watch": {
+      "prevalence": 0.01746,
+      "threshold": 0.771,
+      "precision": 0.4734,
+      "recall": 0.8327,
+      "f1": 0.6036,
+      "auc": 0.9868,
+      "average_precision": 0.7679
+     }
+    },
+    "cleaning_wet_floor": {
+     "alarm": {
+      "prevalence": 0.01672,
+      "threshold": 0.9071,
+      "precision": 0.5219,
+      "recall": 0.6466,
+      "f1": 0.5776,
+      "auc": 0.9823,
+      "average_precision": 0.585
+     },
+     "watch": {
+      "prevalence": 0.01672,
+      "threshold": 0.8692,
+      "precision": 0.4614,
+      "recall": 0.7183,
+      "f1": 0.5618,
+      "auc": 0.9823,
+      "average_precision": 0.585
+     }
+    },
+    "sanitizer": {
+     "alarm": {
+      "prevalence": 0.00771,
+      "threshold": 0.9284,
+      "precision": 0.5257,
+      "recall": 0.6065,
+      "f1": 0.5632,
+      "auc": 0.9899,
+      "average_precision": 0.5706
+     },
+     "watch": {
+      "prevalence": 0.00771,
+      "threshold": 0.9076,
+      "precision": 0.4917,
+      "recall": 0.6471,
+      "f1": 0.5588,
+      "auc": 0.9899,
+      "average_precision": 0.5706
+     }
+    },
+    "fragrance": {
+     "alarm": {
+      "prevalence": 0.00174,
+      "threshold": 0.8213,
+      "precision": 0.0702,
+      "recall": 0.1106,
+      "f1": 0.0859,
+      "auc": 0.8711,
+      "average_precision": 0.0424
+     },
+     "watch": {
+      "prevalence": 0.00174,
+      "threshold": 0.8213,
+      "precision": 0.0702,
+      "recall": 0.1106,
+      "f1": 0.0859,
+      "auc": 0.8711,
+      "average_precision": 0.0424
+     }
+    },
+    "door_open": {
+     "alarm": {
+      "prevalence": 0.04456,
+      "threshold": 0.823,
+      "precision": 0.4174,
+      "recall": 0.3862,
+      "f1": 0.4012,
+      "auc": 0.8616,
+      "average_precision": 0.3956
+     },
+     "watch": {
+      "prevalence": 0.04456,
+      "threshold": 0.823,
+      "precision": 0.4174,
+      "recall": 0.3862,
+      "f1": 0.4012,
+      "auc": 0.8616,
+      "average_precision": 0.3956
+     }
+    },
+    "window_open": {
+     "alarm": {
+      "prevalence": 0.01708,
+      "threshold": 0.8458,
+      "precision": 0.3041,
+      "recall": 0.4391,
+      "f1": 0.3593,
+      "auc": 0.9168,
+      "average_precision": 0.3148
+     },
+     "watch": {
+      "prevalence": 0.01708,
+      "threshold": 0.7479,
+      "precision": 0.27,
+      "recall": 0.5255,
+      "f1": 0.3567,
+      "auc": 0.9168,
+      "average_precision": 0.3148
+     }
+    },
+    "ventilation_change": {
+     "alarm": {
+      "prevalence": 0.027,
+      "threshold": 0.8576,
+      "precision": 0.5384,
+      "recall": 0.2205,
+      "f1": 0.3128,
+      "auc": 0.8206,
+      "average_precision": 0.268
+     },
+     "watch": {
+      "prevalence": 0.027,
+      "threshold": 0.8576,
+      "precision": 0.5384,
+      "recall": 0.2205,
+      "f1": 0.3128,
+      "auc": 0.8206,
+      "average_precision": 0.268
+     }
+    },
+    "faucet_on": {
+     "alarm": {
+      "prevalence": 0.01807,
+      "threshold": 0.9236,
+      "precision": 0.5791,
+      "recall": 0.5013,
+      "f1": 0.5374,
+      "auc": 0.9426,
+      "average_precision": 0.5533
+     },
+     "watch": {
+      "prevalence": 0.01807,
+      "threshold": 0.8962,
+      "precision": 0.5031,
+      "recall": 0.5496,
+      "f1": 0.5253,
+      "auc": 0.9426,
+      "average_precision": 0.5533
+     }
+    },
+    "leak_active": {
+     "alarm": {
+      "prevalence": 0.00713,
+      "threshold": 0.3524,
+      "precision": 0.8693,
+      "recall": 0.8549,
+      "f1": 0.862,
+      "auc": 0.9914,
+      "average_precision": 0.9067
+     },
+     "watch": {
+      "prevalence": 0.00713,
+      "threshold": 0.0125,
+      "precision": 0.3768,
+      "recall": 0.9431,
+      "f1": 0.5384,
+      "auc": 0.9914,
+      "average_precision": 0.9067
+     }
+    },
+    "freeze_risk_1h": {
+     "alarm": {
+      "prevalence": 0.00693,
+      "threshold": 0.9894,
+      "precision": 0.9858,
+      "recall": 0.7501,
+      "f1": 0.8519,
+      "auc": 0.9786,
+      "average_precision": 0.8429
+     },
+     "watch": {
+      "prevalence": 0.00693,
+      "threshold": 0.0067,
+      "precision": 0.7381,
+      "recall": 0.8208,
+      "f1": 0.7773,
+      "auc": 0.9786,
+      "average_precision": 0.8429
+     }
+    },
+    "freeze_risk_3h": {
+     "alarm": {
+      "prevalence": 0.00987,
+      "threshold": 0.9938,
+      "precision": 0.9975,
+      "recall": 0.5271,
+      "f1": 0.6898,
+      "auc": 0.9539,
+      "average_precision": 0.6735
+     },
+     "watch": {
+      "prevalence": 0.00987,
+      "threshold": 0.5859,
+      "precision": 0.7786,
+      "recall": 0.6012,
+      "f1": 0.6785,
+      "auc": 0.9539,
+      "average_precision": 0.6735
+     }
+    }
+   },
+   "smoking_events": {
+    "alarm": {
+     "events": 568,
+     "caught": 0.5739,
+     "false_alarms": 28,
+     "false_per_device_day": 0.0508,
+     "delay_min_median": 4.25,
+     "delay_min_p90": 6.38
+    },
+    "suspect": {
+     "events": 568,
+     "caught": 0.7623,
+     "false_alarms": 92,
+     "false_per_device_day": 0.1668,
+     "delay_min_median": 3.0,
+     "delay_min_p90": 5.5
+    }
+   },
+   "climate_only_ablation": {
+    "door_open": {
+     "climate_only": {
+      "prevalence": 0.04456,
+      "threshold": 0.7555,
+      "precision": 0.363,
+      "recall": 0.2828,
+      "f1": 0.3179,
+      "auc": 0.8026,
+      "average_precision": 0.2998
+     },
+     "full": {
+      "prevalence": 0.04456,
+      "threshold": 0.823,
+      "precision": 0.4174,
+      "recall": 0.3862,
+      "f1": 0.4012,
+      "auc": 0.8616,
+      "average_precision": 0.3956
+     }
+    },
+    "window_open": {
+     "climate_only": {
+      "prevalence": 0.01708,
+      "threshold": 0.8542,
+      "precision": 0.2468,
+      "recall": 0.4551,
+      "f1": 0.3201,
+      "auc": 0.9129,
+      "average_precision": 0.2329
+     },
+     "full": {
+      "prevalence": 0.01708,
+      "threshold": 0.8458,
+      "precision": 0.3041,
+      "recall": 0.4391,
+      "f1": 0.3593,
+      "auc": 0.9168,
+      "average_precision": 0.3148
+     }
+    },
+    "ventilation_change": {
+     "climate_only": {
+      "prevalence": 0.027,
+      "threshold": 0.6218,
+      "precision": 0.0482,
+      "recall": 0.2667,
+      "f1": 0.0816,
+      "auc": 0.6498,
+      "average_precision": 0.0441
+     },
+     "full": {
+      "prevalence": 0.027,
+      "threshold": 0.8576,
+      "precision": 0.5384,
+      "recall": 0.2205,
+      "f1": 0.3128,
+      "auc": 0.8206,
+      "average_precision": 0.268
+     }
+    },
+    "handwashing_humidity": {
+     "climate_only": {
+      "prevalence": 0.04867,
+      "threshold": 0.8929,
+      "precision": 0.7331,
+      "recall": 0.6594,
+      "f1": 0.6943,
+      "auc": 0.9603,
+      "average_precision": 0.7634
+     },
+     "full": {
+      "prevalence": 0.04867,
+      "threshold": 0.8858,
+      "precision": 0.7531,
+      "recall": 0.729,
+      "f1": 0.7409,
+      "auc": 0.9787,
+      "average_precision": 0.8272
+     }
+    },
+    "wet_floor": {
+     "climate_only": {
+      "prevalence": 0.04725,
+      "threshold": 0.8269,
+      "precision": 0.4941,
+      "recall": 0.5306,
+      "f1": 0.5117,
+      "auc": 0.9207,
+      "average_precision": 0.5038
+     },
+     "full": {
+      "prevalence": 0.04725,
+      "threshold": 0.8002,
+      "precision": 0.5259,
+      "recall": 0.5576,
+      "f1": 0.5413,
+      "auc": 0.9269,
+      "average_precision": 0.5409
+     }
+    },
+    "leak_active": {
+     "climate_only": {
+      "prevalence": 0.00713,
+      "threshold": 0.8331,
+      "precision": 0.9308,
+      "recall": 0.7887,
+      "f1": 0.8539,
+      "auc": 0.9876,
+      "average_precision": 0.8769
+     },
+     "full": {
+      "prevalence": 0.00713,
+      "threshold": 0.3524,
+      "precision": 0.8693,
+      "recall": 0.8549,
+      "f1": 0.862,
+      "auc": 0.9914,
+      "average_precision": 0.9067
+     }
+    },
+    "faucet_on": {
+     "climate_only": {
+      "prevalence": 0.01807,
+      "threshold": 0.9302,
+      "precision": 0.5736,
+      "recall": 0.3929,
+      "f1": 0.4663,
+      "auc": 0.9032,
+      "average_precision": 0.4515
+     },
+     "full": {
+      "prevalence": 0.01807,
+      "threshold": 0.9236,
+      "precision": 0.5791,
+      "recall": 0.5013,
+      "f1": 0.5374,
+      "auc": 0.9426,
+      "average_precision": 0.5533
+     }
+    },
+    "freeze_risk_1h": {
+     "climate_only": {
+      "prevalence": 0.00693,
+      "threshold": 0.9794,
+      "precision": 0.9753,
+      "recall": 0.7888,
+      "f1": 0.8722,
+      "auc": 0.9837,
+      "average_precision": 0.866
+     },
+     "full": {
+      "prevalence": 0.00693,
+      "threshold": 0.9894,
+      "precision": 0.9858,
+      "recall": 0.7501,
+      "f1": 0.8519,
+      "auc": 0.9786,
+      "average_precision": 0.8429
+     }
+    },
+    "freeze_risk_3h": {
+     "climate_only": {
+      "prevalence": 0.00987,
+      "threshold": 0.9482,
+      "precision": 0.9487,
+      "recall": 0.58,
+      "f1": 0.7199,
+      "auc": 0.9515,
+      "average_precision": 0.656
+     },
+     "full": {
+      "prevalence": 0.00987,
+      "threshold": 0.9938,
+      "precision": 0.9975,
+      "recall": 0.5271,
+      "f1": 0.6898,
+      "auc": 0.9539,
+      "average_precision": 0.6735
+     }
+    }
+   }
+  },
+  "shift": {
+   "devices": 40,
+   "rows": 3177600,
+   "labels": {
+    "smoking": {
+     "alarm": {
+      "prevalence": 0.0022,
+      "threshold": 0.9629,
+      "precision": 0.5214,
+      "recall": 0.41,
+      "f1": 0.4591,
+      "auc": 0.9519,
+      "average_precision": 0.3896
+     },
+     "watch": {
+      "prevalence": 0.0022,
+      "threshold": 0.8779,
+      "precision": 0.3845,
+      "recall": 0.5001,
+      "f1": 0.4347,
+      "auc": 0.9519,
+      "average_precision": 0.3896
+     }
+    },
+    "smoke_residual": {
+     "alarm": {
+      "prevalence": 0.00422,
+      "threshold": 0.9353,
+      "precision": 0.559,
+      "recall": 0.6246,
+      "f1": 0.59,
+      "auc": 0.9905,
+      "average_precision": 0.6221
+     },
+     "watch": {
+      "prevalence": 0.00422,
+      "threshold": 0.5631,
+      "precision": 0.3538,
+      "recall": 0.7923,
+      "f1": 0.4891,
+      "auc": 0.9905,
+      "average_precision": 0.6221
+     }
+    },
+    "occupancy_odor": {
+     "alarm": {
+      "prevalence": 0.10735,
+      "threshold": 0.872,
+      "precision": 0.8492,
+      "recall": 0.7558,
+      "f1": 0.7998,
+      "auc": 0.965,
+      "average_precision": 0.8484
+     },
+     "watch": {
+      "prevalence": 0.10735,
+      "threshold": 0.2942,
+      "precision": 0.5424,
+      "recall": 0.9065,
+      "f1": 0.6787,
+      "auc": 0.965,
+      "average_precision": 0.8484
+     }
+    },
+    "handwashing_humidity": {
+     "alarm": {
+      "prevalence": 0.06828,
+      "threshold": 0.8858,
+      "precision": 0.7669,
+      "recall": 0.7333,
+      "f1": 0.7498,
+      "auc": 0.9762,
+      "average_precision": 0.8401
+     },
+     "watch": {
+      "prevalence": 0.06828,
+      "threshold": 0.5925,
+      "precision": 0.5308,
+      "recall": 0.892,
+      "f1": 0.6656,
+      "auc": 0.9762,
+      "average_precision": 0.8401
+     }
+    },
+    "wet_floor": {
+     "alarm": {
+      "prevalence": 0.04722,
+      "threshold": 0.8002,
+      "precision": 0.4439,
+      "recall": 0.4898,
+      "f1": 0.4657,
+      "auc": 0.908,
+      "average_precision": 0.4498
+     },
+     "watch": {
+      "prevalence": 0.04722,
+      "threshold": 0.7706,
+      "precision": 0.417,
+      "recall": 0.5253,
+      "f1": 0.4649,
+      "auc": 0.908,
+      "average_precision": 0.4498
+     }
+    },
+    "cleaning_products": {
+     "alarm": {
+      "prevalence": 0.01749,
+      "threshold": 0.9355,
+      "precision": 0.6336,
+      "recall": 0.5911,
+      "f1": 0.6116,
+      "auc": 0.9814,
+      "average_precision": 0.6655
+     },
+     "watch": {
+      "prevalence": 0.01749,
+      "threshold": 0.771,
+      "precision": 0.3885,
+      "recall": 0.792,
+      "f1": 0.5212,
+      "auc": 0.9814,
+      "average_precision": 0.6655
+     }
+    },
+    "cleaning_wet_floor": {
+     "alarm": {
+      "prevalence": 0.01801,
+      "threshold": 0.9071,
+      "precision": 0.4517,
+      "recall": 0.5823,
+      "f1": 0.5088,
+      "auc": 0.9749,
+      "average_precision": 0.4994
+     },
+     "watch": {
+      "prevalence": 0.01801,
+      "threshold": 0.8692,
+      "precision": 0.392,
+      "recall": 0.6613,
+      "f1": 0.4922,
+      "auc": 0.9749,
+      "average_precision": 0.4994
+     }
+    },
+    "sanitizer": {
+     "alarm": {
+      "prevalence": 0.01117,
+      "threshold": 0.9284,
+      "precision": 0.4756,
+      "recall": 0.6205,
+      "f1": 0.5384,
+      "auc": 0.9872,
+      "average_precision": 0.5388
+     },
+     "watch": {
+      "prevalence": 0.01117,
+      "threshold": 0.9076,
+      "precision": 0.4451,
+      "recall": 0.6607,
+      "f1": 0.5319,
+      "auc": 0.9872,
+      "average_precision": 0.5388
+     }
+    },
+    "fragrance": {
+     "alarm": {
+      "prevalence": 0.00343,
+      "threshold": 0.8213,
+      "precision": 0.0743,
+      "recall": 0.0728,
+      "f1": 0.0735,
+      "auc": 0.8768,
+      "average_precision": 0.0406
+     },
+     "watch": {
+      "prevalence": 0.00343,
+      "threshold": 0.8213,
+      "precision": 0.0743,
+      "recall": 0.0728,
+      "f1": 0.0735,
+      "auc": 0.8768,
+      "average_precision": 0.0406
+     }
+    },
+    "door_open": {
+     "alarm": {
+      "prevalence": 0.05422,
+      "threshold": 0.823,
+      "precision": 0.3271,
+      "recall": 0.2525,
+      "f1": 0.285,
+      "auc": 0.7998,
+      "average_precision": 0.2484
+     },
+     "watch": {
+      "prevalence": 0.05422,
+      "threshold": 0.823,
+      "precision": 0.3271,
+      "recall": 0.2525,
+      "f1": 0.285,
+      "auc": 0.7998,
+      "average_precision": 0.2484
+     }
+    },
+    "window_open": {
+     "alarm": {
+      "prevalence": 0.01892,
+      "threshold": 0.8458,
+      "precision": 0.3021,
+      "recall": 0.6203,
+      "f1": 0.4063,
+      "auc": 0.954,
+      "average_precision": 0.4194
+     },
+     "watch": {
+      "prevalence": 0.01892,
+      "threshold": 0.7479,
+      "precision": 0.2465,
+      "recall": 0.6966,
+      "f1": 0.3641,
+      "auc": 0.954,
+      "average_precision": 0.4194
+     }
+    },
+    "ventilation_change": {
+     "alarm": {
+      "prevalence": 0.02983,
+      "threshold": 0.8576,
+      "precision": 0.4638,
+      "recall": 0.2498,
+      "f1": 0.3247,
+      "auc": 0.841,
+      "average_precision": 0.2785
+     },
+     "watch": {
+      "prevalence": 0.02983,
+      "threshold": 0.8576,
+      "precision": 0.4638,
+      "recall": 0.2498,
+      "f1": 0.3247,
+      "auc": 0.841,
+      "average_precision": 0.2785
+     }
+    },
+    "faucet_on": {
+     "alarm": {
+      "prevalence": 0.0247,
+      "threshold": 0.9236,
+      "precision": 0.6199,
+      "recall": 0.5172,
+      "f1": 0.5639,
+      "auc": 0.9428,
+      "average_precision": 0.5918
+     },
+     "watch": {
+      "prevalence": 0.0247,
+      "threshold": 0.8962,
+      "precision": 0.5485,
+      "recall": 0.5653,
+      "f1": 0.5568,
+      "auc": 0.9428,
+      "average_precision": 0.5918
+     }
+    },
+    "leak_active": {
+     "alarm": {
+      "prevalence": 0.00803,
+      "threshold": 0.3524,
+      "precision": 0.6454,
+      "recall": 0.869,
+      "f1": 0.7407,
+      "auc": 0.9879,
+      "average_precision": 0.8727
+     },
+     "watch": {
+      "prevalence": 0.00803,
+      "threshold": 0.0125,
+      "precision": 0.2539,
+      "recall": 0.9395,
+      "f1": 0.3998,
+      "auc": 0.9879,
+      "average_precision": 0.8727
+     }
+    },
+    "freeze_risk_1h": {
+     "alarm": {
+      "prevalence": 0.01908,
+      "threshold": 0.9894,
+      "precision": 0.9943,
+      "recall": 0.721,
+      "f1": 0.8359,
+      "auc": 0.9538,
+      "average_precision": 0.8873
+     },
+     "watch": {
+      "prevalence": 0.01908,
+      "threshold": 0.0067,
+      "precision": 0.8888,
+      "recall": 0.8525,
+      "f1": 0.8703,
+      "auc": 0.9538,
+      "average_precision": 0.8873
+     }
+    },
+    "freeze_risk_3h": {
+     "alarm": {
+      "prevalence": 0.02694,
+      "threshold": 0.9938,
+      "precision": 0.9978,
+      "recall": 0.51,
+      "f1": 0.675,
+      "auc": 0.8836,
+      "average_precision": 0.6665
+     },
+     "watch": {
+      "prevalence": 0.02694,
+      "threshold": 0.5859,
+      "precision": 0.8704,
+      "recall": 0.6037,
+      "f1": 0.713,
+      "auc": 0.8836,
+      "average_precision": 0.6665
+     }
+    }
+   },
+   "smoking_events": {
+    "alarm": {
+     "events": 286,
+     "caught": 0.3916,
+     "false_alarms": 30,
+     "false_per_device_day": 0.0544,
+     "delay_min_median": 4.0,
+     "delay_min_p90": 6.23
+    },
+    "suspect": {
+     "events": 286,
+     "caught": 0.6329,
+     "false_alarms": 120,
+     "false_per_device_day": 0.2175,
+     "delay_min_median": 3.25,
+     "delay_min_p90": 6.5
+    }
+   },
+   "climate_only_ablation": {
+    "door_open": {
+     "climate_only": {
+      "prevalence": 0.05422,
+      "threshold": 0.5955,
+      "precision": 0.1151,
+      "recall": 0.338,
+      "f1": 0.1717,
+      "auc": 0.711,
+      "average_precision": 0.1272
+     },
+     "full": {
+      "prevalence": 0.05422,
+      "threshold": 0.823,
+      "precision": 0.3271,
+      "recall": 0.2525,
+      "f1": 0.285,
+      "auc": 0.7998,
+      "average_precision": 0.2484
+     }
+    },
+    "window_open": {
+     "climate_only": {
+      "prevalence": 0.01892,
+      "threshold": 0.9635,
+      "precision": 0.3888,
+      "recall": 0.3713,
+      "f1": 0.3798,
+      "auc": 0.9394,
+      "average_precision": 0.3266
+     },
+     "full": {
+      "prevalence": 0.01892,
+      "threshold": 0.8458,
+      "precision": 0.3021,
+      "recall": 0.6203,
+      "f1": 0.4063,
+      "auc": 0.954,
+      "average_precision": 0.4194
+     }
+    },
+    "ventilation_change": {
+     "climate_only": {
+      "prevalence": 0.02983,
+      "threshold": 0.6402,
+      "precision": 0.0574,
+      "recall": 0.2729,
+      "f1": 0.0948,
+      "auc": 0.6803,
+      "average_precision": 0.0533
+     },
+     "full": {
+      "prevalence": 0.02983,
+      "threshold": 0.8576,
+      "precision": 0.4638,
+      "recall": 0.2498,
+      "f1": 0.3247,
+      "auc": 0.841,
+      "average_precision": 0.2785
+     }
+    },
+    "handwashing_humidity": {
+     "climate_only": {
+      "prevalence": 0.06828,
+      "threshold": 0.882,
+      "precision": 0.7513,
+      "recall": 0.686,
+      "f1": 0.7172,
+      "auc": 0.96,
+      "average_precision": 0.792
+     },
+     "full": {
+      "prevalence": 0.06828,
+      "threshold": 0.8858,
+      "precision": 0.7669,
+      "recall": 0.7333,
+      "f1": 0.7498,
+      "auc": 0.9762,
+      "average_precision": 0.8401
+     }
+    },
+    "wet_floor": {
+     "climate_only": {
+      "prevalence": 0.04722,
+      "threshold": 0.7884,
+      "precision": 0.3581,
+      "recall": 0.4983,
+      "f1": 0.4167,
+      "auc": 0.8954,
+      "average_precision": 0.3843
+     },
+     "full": {
+      "prevalence": 0.04722,
+      "threshold": 0.8002,
+      "precision": 0.4439,
+      "recall": 0.4898,
+      "f1": 0.4657,
+      "auc": 0.908,
+      "average_precision": 0.4498
+     }
+    },
+    "leak_active": {
+     "climate_only": {
+      "prevalence": 0.00803,
+      "threshold": 0.9481,
+      "precision": 0.8156,
+      "recall": 0.7699,
+      "f1": 0.7921,
+      "auc": 0.9873,
+      "average_precision": 0.8319
+     },
+     "full": {
+      "prevalence": 0.00803,
+      "threshold": 0.3524,
+      "precision": 0.6454,
+      "recall": 0.869,
+      "f1": 0.7407,
+      "auc": 0.9879,
+      "average_precision": 0.8727
+     }
+    },
+    "faucet_on": {
+     "climate_only": {
+      "prevalence": 0.0247,
+      "threshold": 0.9026,
+      "precision": 0.5643,
+      "recall": 0.4791,
+      "f1": 0.5182,
+      "auc": 0.9021,
+      "average_precision": 0.5144
+     },
+     "full": {
+      "prevalence": 0.0247,
+      "threshold": 0.9236,
+      "precision": 0.6199,
+      "recall": 0.5172,
+      "f1": 0.5639,
+      "auc": 0.9428,
+      "average_precision": 0.5918
+     }
+    },
+    "freeze_risk_1h": {
+     "climate_only": {
+      "prevalence": 0.01908,
+      "threshold": 0.7412,
+      "precision": 0.9246,
+      "recall": 0.8284,
+      "f1": 0.8739,
+      "auc": 0.9506,
+      "average_precision": 0.8836
+     },
+     "full": {
+      "prevalence": 0.01908,
+      "threshold": 0.9894,
+      "precision": 0.9943,
+      "recall": 0.721,
+      "f1": 0.8359,
+      "auc": 0.9538,
+      "average_precision": 0.8873
+     }
+    },
+    "freeze_risk_3h": {
+     "climate_only": {
+      "prevalence": 0.02694,
+      "threshold": 0.8009,
+      "precision": 0.9378,
+      "recall": 0.5799,
+      "f1": 0.7166,
+      "auc": 0.8768,
+      "average_precision": 0.6574
+     },
+     "full": {
+      "prevalence": 0.02694,
+      "threshold": 0.9938,
+      "precision": 0.9978,
+      "recall": 0.51,
+      "f1": 0.675,
+      "auc": 0.8836,
+      "average_precision": 0.6665
+     }
+    }
+   }
+  }
+ },
+ "seconds": 3026,
+ "smoking_false_limits": {
+  "alarm": 0.05,
+  "suspect": 0.25
+ },
+ "watch_precision": 0.5
+}

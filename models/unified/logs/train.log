@@ -1,0 +1,28 @@
+[01:39:11] train set: 120 devices x 14 days, every 8th row
+[01:39:30]   rows 1,191,600, positives per label: smoking=4238, smoke_residual=9725, occupancy_odor=87902, handwashing_humidity=55791, wet_floor=56302, cleaning_products=20331, cleaning_wet_floor=20130, sanitizer=8893, fragrance=2961, door_open=49991, window_open=27589, ventilation_change=38584, faucet_on=20839, leak_active=11022, freeze_risk_1h=10368, freeze_risk_3h=13908
+[01:39:30] calibration set: 40 devices
+[01:41:45]   leaf grid: max_leaf_nodes=15 mean AP on calibration devices 0.6133
+[01:43:13]   leaf grid: max_leaf_nodes=31 mean AP on calibration devices 0.6195
+[01:44:55]   leaf grid: max_leaf_nodes=63 mean AP on calibration devices 0.6238
+[01:45:57]   smoking                rounds 180  calibration AP 0.5805
+[01:46:55]   smoke_residual         rounds 140  calibration AP 0.7971
+[01:47:56]   occupancy_odor         rounds 400  calibration AP 0.8608
+[01:48:53]   handwashing_humidity   rounds 400  calibration AP 0.8116
+[01:50:22]   wet_floor              rounds 340  calibration AP 0.5506
+[01:51:19]   cleaning_products      rounds 280  calibration AP 0.7893
+[01:52:27]   cleaning_wet_floor     rounds 160  calibration AP 0.6096
+[01:53:22]   sanitizer              rounds 400  calibration AP 0.5520
+[01:54:20]   fragrance              rounds 320  calibration AP 0.0644
+[01:55:14]   door_open              rounds 400  calibration AP 0.4197
+[01:56:11]   window_open            rounds 140  calibration AP 0.6017
+[01:57:06]   ventilation_change     rounds 100  calibration AP 0.2040
+[01:58:01]   faucet_on              rounds 340  calibration AP 0.5244
+[01:59:03]   leak_active            rounds 240  calibration AP 0.9030
+[02:00:10]   freeze_risk_1h         rounds 400  calibration AP 0.8647
+[02:01:12]   freeze_risk_3h         rounds  80  calibration AP 0.6440
+[02:07:07] ablation models trained
+[02:12:53] smoking alarm rule {'threshold': 0.95, 'm': 6, 'window': 8, 'clear': 8, 'note': 'no rule met the false-alarm limit'}
+[02:12:53] smoking suspect rule {'threshold': 0.95, 'm': 6, 'window': 8, 'clear': 8, 'note': 'no rule met the false-alarm limit'}
+[02:21:17] test: smoking alarm {'events': 568, 'caught': 0.8028, 'false_alarms': 118, 'false_per_device_day': 0.2139, 'delay_min_median': 3.0, 'delay_min_p90': 5.25}  suspect {'events': 568, 'caught': 0.8028, 'false_alarms': 118, 'false_per_device_day': 0.2139, 'delay_min_median': 3.0, 'delay_min_p90': 5.25}
+[02:29:37] shift: smoking alarm {'events': 286, 'caught': 0.6993, 'false_alarms': 153, 'false_per_device_day': 0.2773, 'delay_min_median': 3.25, 'delay_min_p90': 6.25}  suspect {'events': 286, 'caught': 0.6993, 'false_alarms': 153, 'false_per_device_day': 0.2773, 'delay_min_median': 3.25, 'delay_min_p90': 6.25}
+[02:29:37] done in 3026 s -> models/unified

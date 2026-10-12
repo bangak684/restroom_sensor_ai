@@ -1,0 +1,120 @@
+{
+ "world": "unified_restroom_v1",
+ "thresholds": {
+  "smoking": {
+   "alarm": 0.9628636837005615,
+   "watch": 0.8779310584068298
+  },
+  "smoke_residual": {
+   "alarm": 0.9353412985801697,
+   "watch": 0.563095211982727
+  },
+  "occupancy_odor": {
+   "alarm": 0.8720419406890869,
+   "watch": 0.294248104095459
+  },
+  "handwashing_humidity": {
+   "alarm": 0.8858464956283569,
+   "watch": 0.592514157295227
+  },
+  "wet_floor": {
+   "alarm": 0.8001984357833862,
+   "watch": 0.7705523371696472
+  },
+  "cleaning_products": {
+   "alarm": 0.9355165958404541,
+   "watch": 0.7710356712341309
+  },
+  "cleaning_wet_floor": {
+   "alarm": 0.907099187374115,
+   "watch": 0.8691999316215515
+  },
+  "sanitizer": {
+   "alarm": 0.928378701210022,
+   "watch": 0.9075831174850464
+  },
+  "fragrance": {
+   "alarm": 0.821336567401886,
+   "watch": 0.821336567401886
+  },
+  "door_open": {
+   "alarm": 0.8229919672012329,
+   "watch": 0.8229919672012329
+  },
+  "window_open": {
+   "alarm": 0.8457688689231873,
+   "watch": 0.7478978037834167
+  },
+  "ventilation_change": {
+   "alarm": 0.8575803637504578,
+   "watch": 0.8575803637504578
+  },
+  "faucet_on": {
+   "alarm": 0.9236494302749634,
+   "watch": 0.8962198495864868
+  },
+  "leak_active": {
+   "alarm": 0.35240593552589417,
+   "watch": 0.012507135979831219
+  },
+  "freeze_risk_1h": {
+   "alarm": 0.9893894195556641,
+   "watch": 0.006706966552883387
+  },
+  "freeze_risk_3h": {
+   "alarm": 0.9938450455665588,
+   "watch": 0.5858970880508423
+  }
+ },
+ "smoking_rules": {
+  "alarm": {
+   "threshold": 0.98,
+   "m": 10,
+   "window": 12,
+   "clear": 8,
+   "events": 497,
+   "caught": 0.6177,
+   "false_alarms": 27,
+   "false_per_device_day": 0.0489,
+   "delay_min_median": 4.0,
+   "delay_min_p90": 6.35
+  },
+  "suspect": {
+   "threshold": 0.97,
+   "m": 6,
+   "window": 8,
+   "clear": 8,
+   "events": 497,
+   "caught": 0.7948,
+   "false_alarms": 129,
+   "false_per_device_day": 0.2338,
+   "delay_min_median": 3.0,
+   "delay_min_p90": 5.5
+  }
+ },
+ "labels": [
+  "smoking",
+  "smoke_residual",
+  "occupancy_odor",
+  "handwashing_humidity",
+  "wet_floor",
+  "cleaning_products",
+  "cleaning_wet_floor",
+  "sanitizer",
+  "fragrance",
+  "door_open",
+  "window_open",
+  "ventilation_change",
+  "faucet_on",
+  "leak_active",
+  "freeze_risk_1h",
+  "freeze_risk_3h"
+ ],
+ "buffer_rows": 2400,
+ "warmup_rows": 480,
+ "smoking_false_limits": {
+  "alarm": 0.05,
+  "suspect": 0.25
+ },
+ "watch_precision": 0.5
+}

@@ -1,0 +1,158 @@
+{
+ "world": "unified_restroom_v1",
+ "step_seconds": 15,
+ "labels": [
+  "smoking",
+  "smoke_residual",
+  "occupancy_odor",
+  "handwashing_humidity",
+  "wet_floor",
+  "cleaning_products",
+  "cleaning_wet_floor",
+  "sanitizer",
+  "fragrance",
+  "door_open",
+  "window_open",
+  "ventilation_change",
+  "faucet_on",
+  "leak_active",
+  "freeze_risk_1h",
+  "freeze_risk_3h"
+ ],
+ "splits": {
+  "train": {
+   "seed": 1,
+   "profile": "train",
+   "devices": 120,
+   "days": 14,
+   "rows": 9676800,
+   "label_prevalence": {
+    "smoking": 0.00351,
+    "smoke_residual": 0.00808,
+    "occupancy_odor": 0.07292,
+    "handwashing_humidity": 0.04636,
+    "wet_floor": 0.04678,
+    "cleaning_products": 0.01688,
+    "cleaning_wet_floor": 0.0167,
+    "sanitizer": 0.00738,
+    "fragrance": 0.00248,
+    "door_open": 0.04169,
+    "window_open": 0.02296,
+    "ventilation_change": 0.03206,
+    "faucet_on": 0.01733,
+    "leak_active": 0.00913,
+    "freeze_risk_1h": 0.0086,
+    "freeze_risk_3h": 0.01155
+   }
+  },
+  "calibration": {
+   "seed": 2,
+   "profile": "train",
+   "devices": 40,
+   "days": 14,
+   "rows": 3225600,
+   "label_prevalence": {
+    "smoking": 0.00386,
+    "smoke_residual": 0.00815,
+    "occupancy_odor": 0.07077,
+    "handwashing_humidity": 0.04538,
+    "wet_floor": 0.04491,
+    "cleaning_products": 0.01751,
+    "cleaning_wet_floor": 0.01717,
+    "sanitizer": 0.00691,
+    "fragrance": 0.00232,
+    "door_open": 0.04159,
+    "window_open": 0.0312,
+    "ventilation_change": 0.03019,
+    "faucet_on": 0.01701,
+    "leak_active": 0.01083,
+    "freeze_risk_1h": 0.00514,
+    "freeze_risk_3h": 0.00708
+   }
+  },
+  "test": {
+   "seed": 3,
+   "profile": "train",
+   "devices": 40,
+   "days": 14,
+   "rows": 3225600,
+   "label_prevalence": {
+    "smoking": 0.00449,
+    "smoke_residual": 0.01169,
+    "occupancy_odor": 0.07351,
+    "handwashing_humidity": 0.04816,
+    "wet_floor": 0.04689,
+    "cleaning_products": 0.01732,
+    "cleaning_wet_floor": 0.0166,
+    "sanitizer": 0.00762,
+    "fragrance": 0.00173,
+    "door_open": 0.04408,
+    "window_open": 0.01701,
+    "ventilation_change": 0.0267,
+    "faucet_on": 0.01789,
+    "leak_active": 0.00702,
+    "freeze_risk_1h": 0.00682,
+    "freeze_risk_3h": 0.00972
+   }
+  },
+  "shift": {
+   "seed": 4,
+   "profile": "shift",
+   "devices": 40,
+   "days": 14,
+   "rows": 3225600,
+   "label_prevalence": {
+    "smoking": 0.00217,
+    "smoke_residual": 0.00419,
+    "occupancy_odor": 0.10621,
+    "handwashing_humidity": 0.06757,
+    "wet_floor": 0.0469,
+    "cleaning_products": 0.01735,
+    "cleaning_wet_floor": 0.01792,
+    "sanitizer": 0.01106,
+    "fragrance": 0.0034,
+    "door_open": 0.05366,
+    "window_open": 0.0188,
+    "ventilation_change": 0.02961,
+    "faucet_on": 0.02445,
+    "leak_active": 0.00791,
+    "freeze_risk_1h": 0.0189,
+    "freeze_risk_3h": 0.02677
+   }
+  }
+ },
+ "files": {
+  "calibration.npz": {
+   "bytes": 7835594,
+   "sha256": "6bb7001035a545b01c44e06ac6de0f971b70424a6666317b87e968851f4b40a2"
+  },
+  "devices_calibration.csv": {
+   "bytes": 13438,
+   "sha256": "cc5f6b989b5246723b67fa67d8b65b33d958d7240d6ff4e16684ad4442966027"
+  },
+  "devices_shift.csv": {
+   "bytes": 13065,
+   "sha256": "e05e5c3fd8912ec3789292431fb35d50729382a74eae814f112f624d934c6c80"
+  },
+  "devices_test.csv": {
+   "bytes": 13085,
+   "sha256": "4d24ce7eeeb187ae11e596f5fd9ab11c0a57ecdffcc56973bc851118bb7e3476"
+  },
+  "devices_train.csv": {
+   "bytes": 38767,
+   "sha256": "f84e4c47075ea458281baa20e658e567382444d1efabf4e757ee3f942f902b07"
+  },
+  "shift.npz": {
+   "bytes": 8018565,
+   "sha256": "683e6e07663ea6e7588538b5921be34263f05be2e58cce012d8e9355e4eeac3f"
+  },
+  "test.npz": {
+   "bytes": 7854218,
+   "sha256": "0255c31a7bd1cceb7102afcb18056a0818b3dd78f791a6195d908ce8e0414d72"
+  },
+  "train.npz": {
+   "bytes": 23551070,
+   "sha256": "f50b218b9961cb5cf00d91ca6def2550499a21dfc1c3058c1d0b50df1913dc91"
+  }
+ }
+}

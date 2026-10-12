@@ -1,0 +1,62 @@
+[
+ {
+  "check": "bundle loads",
+  "passed": true,
+  "detail": "16 labels, 56 features"
+ },
+ {
+  "check": "streaming features equal batch features",
+  "passed": true,
+  "detail": "max abs diff 0.00e+00"
+ },
+ {
+  "check": "streaming judge probabilities equal batch probabilities",
+  "passed": true,
+  "detail": "max abs diff 5.00e-05 (judge rounds to 4 decimals)"
+ },
+ {
+  "check": "held-out AUC above 0.6 for every label",
+  "passed": true,
+  "detail": ""
+ },
+ {
+  "check": "smoking event detection on held-out devices",
+  "passed": true,
+  "detail": "{\"events\": 568, \"caught\": 0.7623, \"false_alarms\": 92, \"false_per_device_day\": 0.1668, \"delay_min_median\": 3.0, \"delay_min_p90\": 5.5}"
+ },
+ {
+  "check": "scene: smoking alarm is 긴급",
+  "passed": true,
+  "detail": ""
+ },
+ {
+  "check": "scene: leak without context is 긴급",
+  "passed": true,
+  "detail": ""
+ },
+ {
+  "check": "scene: leak while handwashing is 주의",
+  "passed": true,
+  "detail": ""
+ },
+ {
+  "check": "scene: leak with context for 30 minutes is 긴급",
+  "passed": true,
+  "detail": ""
+ },
+ {
+  "check": "scene: winter window is 주의, summer window is 정보",
+  "passed": true,
+  "detail": ""
+ },
+ {
+  "check": "scene: cold room + open window + 3h freeze alarm is 긴급",
+  "passed": true,
+  "detail": ""
+ },
+ {
+  "check": "scene: propped door in winter is 주의, short door pulse is 정보, nothing is 평상시",
+  "passed": true,
+  "detail": ""
+ }
+]

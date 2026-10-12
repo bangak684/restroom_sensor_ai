@@ -1,0 +1,5 @@
+[02:37:58] smoking alarm rule: {'threshold': 0.98, 'm': 10, 'window': 12, 'clear': 8, 'events': 497, 'caught': 0.6177, 'false_alarms': 27, 'false_per_device_day': 0.0489, 'delay_min_median': 4.0, 'delay_min_p90': 6.35}
+[02:37:58] smoking suspect rule: {'threshold': 0.97, 'm': 6, 'window': 8, 'clear': 8, 'events': 497, 'caught': 0.7948, 'false_alarms': 129, 'false_per_device_day': 0.2338, 'delay_min_median': 3.0, 'delay_min_p90': 5.5}
+[02:45:11] test: smoking alarm {'events': 568, 'caught': 0.5739, 'false_alarms': 28, 'false_per_device_day': 0.0508, 'delay_min_median': 4.25, 'delay_min_p90': 6.38}  suspect {'events': 568, 'caught': 0.7623, 'false_alarms': 92, 'false_per_device_day': 0.1668, 'delay_min_median': 3.0, 'delay_min_p90': 5.5}
+[02:52:28] shift: smoking alarm {'events': 286, 'caught': 0.3916, 'false_alarms': 30, 'false_per_device_day': 0.0544, 'delay_min_median': 4.0, 'delay_min_p90': 6.23}  suspect {'events': 286, 'caught': 0.6329, 'false_alarms': 120, 'false_per_device_day': 0.2175, 'delay_min_median': 3.25, 'delay_min_p90': 6.5}
+[02:52:28] retune done
